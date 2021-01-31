@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 720 720" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g id="SM-Logo" serif:id="SM Logo">
+        <path d="M360,0C558.689,0 720,161.311 720,360C720,558.689 558.689,720 360,720C161.311,720 0,558.689 0,360C0,161.311 161.311,0 360,0ZM340.369,113.21L421.533,143.894L411.964,175.567L542.618,175.567L529.091,273.228L457.825,273.557L570.992,576.766L483.56,606.79L367.423,296.653L237.76,604.151L149.008,577.096L277.022,272.238L183.651,271.908L190.909,175.567L314.304,175.567L340.369,113.21ZM382.27,449.742L432.75,505.171L339.379,598.872L288.569,544.103L382.27,449.742Z" style="fill:rgb(201,0,0);"/>
+    </g>
+</svg>
