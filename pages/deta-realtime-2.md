@@ -1,9 +1,9 @@
 title: Deta + RealTime Tracking - Part 2
-date: 2020-01-30
+date: 2020-01-29
 descr: Realtime position Tracking using deta and micros
 tags: [awesome, realtime, geoposition]
 
-If you follow the part 1 and succesfully got the data from owntracks to the python client, you are ready to continue this guide .
+If you follow the part 1 and succesfully got the data from owntracks to the python client, you are ready to continue whit this guide .
 
 
 Now is time for the fun part, your fully-managed, fast, scalable and secure NoSQL database with a focus on end user simplicity, is here. in this section we have to make our data persistent in some database and deta is perfect for this case.
@@ -28,7 +28,7 @@ deta = Deta(key)
 db = deta.Base('realtime') # data base name
 ```
 
-Paste the p`roject key` generated in deta.sh and the database name can be anything you want.
+Paste the `project key` generated in deta.sh and the database name can be anything you want.
 
 Now lets make our brand new client.
 
@@ -74,7 +74,7 @@ With this code, we have now more output for debug in the terminal, but keeping t
 
 From this point, got to explain how the micro service will work. The `sub_client.py` connects to the broker hosted on `test.mosquitto.org`, susbcribe to the selected topic, in this case `test/owntracks`, receive the payload from the owntracks app and write that to the `detaBase`, than make a REST api endpoint of the payload for further read from the webapp client. 
 
-Owntracks gives us some nice data including latitude, longitude, alttitude, velocity, device battery and others in json format, we could save all the payloads in the database for further analisys but we only need realtime tracking, in simple words, we only need the last point to update the location, to achieve this, detaBase have some methods to read/write on the database. We will take the payload and update it all the time, so only one entry in the database will be there, nathing more nothing less
+Owntracks gives us some nice data including latitude, longitude, altitude, velocity, device battery and others in json format, we could save all the payloads in the database for further analysis but we only need realtime tracking, in simple words, we only need the last point to update the location, to achieve this, detaBase have some methods to read/write on the database. We will take the payload and update it all the time, so only one entry in the database will be there, nothing more nothing less
 
 For the update method to work, there must be a database and a entry, but rigth now is empty. Let's make some prep work.
 
@@ -97,8 +97,10 @@ deta = Deta(KEY) # configure your Deta project
 db = deta.Base(BASE)  # access your DB
 
 payload = { "_type": "location",
-			"acc": 68, "alt": 0, 
-			"batt": 78, "bs": 2, 
+			"acc": 68, 
+			"alt": 0, 
+			"batt": 78, 
+			"bs": 2, 
 			"conn": "w", 
 			"created_at": 1611772063, 
 			"lat": 8.2631383, 
@@ -127,6 +129,9 @@ else:
 	for items in a_list:
 		print(items['key'])
 ```
+
+The payload in the code above represent the data sent by owntracks, we harcode it in the data base for the initial setup. You can call it a pseudo migration :D
+
 
 Replace project key with your real `project key` generated in previous steps and run the script with.
 
